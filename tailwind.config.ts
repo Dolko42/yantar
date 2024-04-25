@@ -23,7 +23,9 @@ const config: Config = {
       },
       backgroundColor: {
         skin: {
-          fill: "var(--color-base)",
+          base: "var(--color-base)",
+          muted: "var(--color-fill-muted)",
+          subtle: "var(--color-fill-subtle)",
           light: "var(--color-fill-light)",
           warning: "var(--color-warning)",
         },

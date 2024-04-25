@@ -11,7 +11,7 @@ type ButtonProps = {
 
 const Button: React.FC<ButtonProps> = ({
   text,
-  bg = "bg-skin-fill",
+  bg = "bg-skin-base",
   color = "text-white",
   width,
   onClick,

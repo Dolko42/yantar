@@ -10,7 +10,8 @@
     --color-text-dark: #030712;
     --color-text-grey: #6b7280;
 
-    --color-fill: #eef2ff;
+    --color-fill-subtle: #eef2ff;
+    --color-fill-muted: #6366f1;
     --color-fill-light: #f9fafb;
 
     --color-border: #d0d1fb;
