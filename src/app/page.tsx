@@ -17,7 +17,7 @@ export default function Home() {
             your AI generated text and earn money. Withdraw money or put them
             back into your own ads.
           </p>
-          <Link href="/onboarding">
+          <Link href="/sign-up">
             <Button text="Start earning ->" width="15rem" />
           </Link>
         </div>
