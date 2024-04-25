@@ -1,12 +1,18 @@
 import React from "react";
+import Image from "next/image";
 import NavLink from "./NavLink";
 
 const DashboardNavbar: React.FC = () => {
   return (
     <div className="p-4">
       <div>
-        <div className="flex items-center justify-center gap-2 rounded bg-skin-subtle p-2 font-medium">
-          <p className="text-skin-base">Yantar</p>
+        <div className="flex items-center justify-center gap-2 rounded bg-skin-subtle pb-2 pt-[10px] font-medium">
+          <Image
+            alt="yantar logo"
+            src="/yantar-logo.svg"
+            width={60}
+            height={20}
+          />
         </div>
       </div>
       <div className="flex flex-col md:flex-row gap-0 md:gap-2 pt-2 justify-between">

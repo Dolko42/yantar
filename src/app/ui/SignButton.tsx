@@ -2,7 +2,7 @@
 
 import React from "react";
 import {
-  SignInButton,
+  SignUpButton,
   SignOutButton,
   SignedIn,
   SignedOut,
@@ -53,7 +53,7 @@ const SignButton: React.FC = () => {
       </SignedIn>
 
       <SignedOut>
-        <SignInButton forceRedirectUrl="/onboarding">
+        <SignUpButton forceRedirectUrl="/onboarding">
           <div
             className={`group cursor-pointer flex h-8 w-full md:w-1/4 items-center justify-center gap-[6px] rounded px-4 bg-skin-subtle transition`}
           >
@@ -68,10 +68,10 @@ const SignButton: React.FC = () => {
             <span
               className={`text-xs text-skin-muted group-hover:text-skin-base transition`}
             >
-              Sign in
+              Sign up
             </span>
           </div>
-        </SignInButton>
+        </SignUpButton>
       </SignedOut>
     </div>
   );
