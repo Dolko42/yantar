@@ -3,7 +3,7 @@ import Button from "./ui/Button";
 
 export default function Home() {
   return (
-    <main className="flex flex-col md:flex-row justify-between items-center gap-8 p-4">
+    <main className="flex flex-col md:flex-row justify-between items-center gap-8 p-4 md:mt-10">
       <div className="w-full lg:w-1/2">
         <h1 className="text-skin-base max-w-[20ch] text-3xl lg:text-5xl xl:text-6xl 2xl:text-7xl 3xl:text-8xl 4xl:text-9xl mb-4">
           Provide advertising space. Grow money and traffic.
