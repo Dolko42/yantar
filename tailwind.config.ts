@@ -8,10 +8,42 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontFamily: {
+        sans: ["var(--font-geist-sans)"],
+        mono: ["var(--font-geist-mono)"],
+      },
+      textColor: {
+        skin: {
+          base: "var(--color-base)",
+          muted: "var(--color-text-muted)",
+          invisible: "var(--color-text-invisible)",
+          dark: "var(--color-text-dark)",
+          grey: "var(--color-text-grey)",
+        },
+      },
+      backgroundColor: {
+        skin: {
+          fill: "var(--color-base)",
+          light: "var(--color-fill-light)",
+          warning: "var(--color-warning)",
+        },
+      },
+      borderColor: {
+        skin: {
+          base: "var(--color-border)",
+        },
+      },
+      blue: {
+        from: "var(--color-blue)",
+        via: "var(--color-blue-via)",
+        to: "var(--color-blue-to)",
+      },
+      screens: {
+        "3xl": "2200px",
+        "4xl": "3200px",
+      },
+      transitionDuration: {
+        DEFAULT: "180ms",
       },
     },
   },
