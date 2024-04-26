@@ -3,14 +3,14 @@ import { Dropdown } from "../ui/Dropdown";
 
 export default function Page() {
   return (
-    <div className="p-4 mt-8">
+    <div className="p-4 mt-2 lg:mt-8">
       <h1 className="text-skin-base text-5xl">Dashboard</h1>
       {/* <Link href="/">Back home</Link> */}
       <div className="flex justify-between items-end mt-6">
         <h2 className="text-skin-base">Analytics</h2>
         <Dropdown />
       </div>
-      <div className="grid grid-cols-2 gap-2 grid-rows-5 mt-3">
+      <div className="flex flex-col gap-2 mt-3 lg:grid lg:grid-cols-2 lg:grid-rows-5">
         <div className="flex flex-col items-center bg-white py-6 border-skin-base border rounded-lg row-span-1">
           <span className="text-skin-base text-4xl font-bold">0</span>
           <span className="text-sm text-skin-muted">Clicks generated</span>
