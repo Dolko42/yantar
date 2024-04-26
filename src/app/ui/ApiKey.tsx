@@ -1,11 +1,11 @@
 "use client";
 import React, { useState } from "react";
 
-type APIKeyProps = {
+type ApiKeyProps = {
   apiKey: string;
 };
 
-const APIKey: React.FC<APIKeyProps> = ({ apiKey }) => {
+const ApiKey: React.FC<ApiKeyProps> = ({ apiKey }) => {
   const [copySuccess, setCopySuccess] = useState(false);
 
   const handleCopyToClipboard = (text: string) => {
@@ -34,4 +34,4 @@ const APIKey: React.FC<APIKeyProps> = ({ apiKey }) => {
     </>
   );
 };
-export default APIKey;
+export default ApiKey;

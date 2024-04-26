@@ -12,7 +12,7 @@ export default function Page() {
         <Dropdown />
       </div>
       {/* DASHBOARD GRID  */}
-      <div className="flex flex-col gap-2 mt-3 lg:grid lg:grid-cols-2 lg:grid-rows-5">
+      <div className="flex flex-col gap-2 mt-3 lg:grid lg:grid-cols-2 lg:grid-rows-6">
         <div className="flex flex-col items-center bg-white py-6 border-skin-base border rounded-lg row-span-1">
           <span className="text-skin-base text-4xl font-bold">0</span>
           <span className="text-sm text-skin-muted">Clicks generated</span>
@@ -51,6 +51,14 @@ export default function Page() {
               </button>
             </Link>
           </div>
+        </div>
+        <div className="flex flex-col items-center bg-white py-6 border-skin-base border rounded-lg row-span-1">
+          <span className="text-skin-base text-4xl font-bold">0$</span>
+          <span className="text-sm text-skin-muted">Spent</span>
+        </div>
+        <div className="flex flex-col items-center bg-white py-6 border-skin-base border rounded-lg row-span-1">
+          <span className="text-skin-base text-4xl font-bold">0$</span>
+          <span className="text-sm text-skin-muted">Avg. CPC</span>
         </div>
       </div>
       <DeveloperBanner />
