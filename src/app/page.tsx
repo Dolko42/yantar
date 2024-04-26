@@ -18,7 +18,7 @@ export default function Home() {
             back into your own ads.
           </p>
           <Link href="/sign-up">
-            <Button text="Start earning ->" width="15rem" />
+            <Button text="Start earning ->" />
           </Link>
         </div>
         <div className="w-full h-80 lg:w-1/2 lg:h-[28rem]">

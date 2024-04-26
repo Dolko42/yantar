@@ -21,7 +21,7 @@ export default function Page() {
           <input placeholder="Organization"></input>
           <textarea placeholder="Describe your organization"></textarea>
           <Link href="/dashboard" className="w-full">
-            <Button text="Proceed to dashboard ->" />
+            <Button text="Proceed to dashboard ->" width="min-w-full" />
           </Link>
         </div>
       </div>
