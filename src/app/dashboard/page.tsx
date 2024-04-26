@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Dropdown } from "../ui/Dropdown";
-import Button from "../ui/Button";
 import DeveloperBanner from "../ui/DeveloperBanner";
 
 export default function Page() {
