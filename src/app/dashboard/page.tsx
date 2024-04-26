@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { Dropdown } from "../ui/Dropdown";
+import Button from "../ui/Button";
+import DeveloperBanner from "../ui/DeveloperBanner";
 
 export default function Page() {
   return (
@@ -10,6 +12,7 @@ export default function Page() {
         <h2 className="text-skin-base">Analytics</h2>
         <Dropdown />
       </div>
+      {/* DASHBOARD GRID  */}
       <div className="flex flex-col gap-2 mt-3 lg:grid lg:grid-cols-2 lg:grid-rows-5">
         <div className="flex flex-col items-center bg-white py-6 border-skin-base border rounded-lg row-span-1">
           <span className="text-skin-base text-4xl font-bold">0</span>
@@ -51,6 +54,7 @@ export default function Page() {
           </div>
         </div>
       </div>
+      <DeveloperBanner />
     </div>
   );
 }
