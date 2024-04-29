@@ -33,6 +33,7 @@ const config: Config = {
       borderColor: {
         skin: {
           base: "var(--color-border)",
+          strong: "var(--color-border-strong)",
         },
       },
       blue: {

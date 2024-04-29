@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Dropdown } from "../ui/Dropdown";
+import { FilterDropdown } from "../ui/FilterDropdown";
 import DeveloperBanner from "../ui/DeveloperBanner";
 
 export default function Page() {
@@ -9,7 +9,7 @@ export default function Page() {
       {/* <Link href="/">Back home</Link> */}
       <div className="flex justify-between items-end mt-6">
         <h2 className="text-skin-base">Analytics</h2>
-        <Dropdown />
+        <FilterDropdown />
       </div>
       {/* DASHBOARD GRID  */}
       <div className="flex flex-col gap-2 mt-3 lg:grid lg:grid-cols-2 lg:grid-rows-6">

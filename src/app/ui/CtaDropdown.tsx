@@ -10,39 +10,39 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-export function Dropdown() {
+export function CtaDropdown() {
   return (
     <div className="relative z-50 text-skin-base">
       <Select>
-        <SelectTrigger className="w-[180px] border border-skin-base focus:border-blue-500 bg-white">
+        <SelectTrigger className="w-full border-b-2 border-skin-base focus:border-blue-500 bg-white rounded-none">
           <SelectValue placeholder="Last 30 days" />
         </SelectTrigger>
-        <SelectContent className="border border-skin-base bg-white">
+        <SelectContent className="bg-white">
           <SelectGroup className="bg-skin-light">
-            <SelectLabel className="text-skin-base">Filter</SelectLabel>
+            <SelectLabel className="text-skin-base">CTA</SelectLabel>
             <SelectItem
               value="today"
               className="hover:bg-skin-subtle cursor-pointer text-skin-muted transition-colors duration-200"
             >
-              Today
+              Shop now
             </SelectItem>
             <SelectItem
               value="7"
               className="hover:bg-skin-subtle cursor-pointer text-skin-muted transition-colors duration-200"
             >
-              Last 7 Days
+              Browse all
             </SelectItem>
             <SelectItem
               value="30"
               className="hover:bg-skin-subtle cursor-pointer text-skin-muted transition-colors duration-200"
             >
-              Last 30 Days
+              Learn more
             </SelectItem>
             <SelectItem
               value="all"
               className="hover:bg-skin-subtle cursor-pointer text-skin-muted transition-colors duration-200"
             >
-              All time
+              Book a demo
             </SelectItem>
           </SelectGroup>
         </SelectContent>
