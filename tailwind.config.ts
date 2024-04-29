@@ -19,6 +19,7 @@ const config: Config = {
           invisible: "var(--color-text-invisible)",
           dark: "var(--color-text-dark)",
           grey: "var(--color-text-grey)",
+          warning: "var(--color-warning)",
         },
       },
       backgroundColor: {
