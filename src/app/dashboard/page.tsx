@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <div className="p-4 mt-2 lg:mt-8">
       <h1 className="text-skin-base text-5xl">Dashboard</h1>
-      {/* <Link href="/">Back home</Link> */}
+      <Link href="/">Back home</Link>
       <div className="flex justify-between items-end mt-6">
         <h2 className="text-skin-base">Analytics</h2>
         <FilterDropdown />
