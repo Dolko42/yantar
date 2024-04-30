@@ -1,6 +1,8 @@
 import { Webhook } from "svix";
 import { headers } from "next/headers";
 import { WebhookEvent } from "@clerk/nextjs/server";
+import { handleSignUp } from "@/lib/utils";
+import { createUserData } from "../../../../../types";
 
 export async function POST(req: Request) {
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the webhook
@@ -46,6 +48,41 @@ export async function POST(req: Request) {
     return new Response("Error occured", {
       status: 400,
     });
+  }
+
+  if (evt.type === "user.created") {
+    const { id, email_addresses } = evt.data;
+
+    // Extract primary email address
+    const primaryEmailAddress = email_addresses.find(
+      (email: { id: string }) => email.id === evt.data.primary_email_address_id
+    );
+
+    if (!primaryEmailAddress) {
+      console.error("Primary email address not found");
+      return new Response("Error occurred during user creation", {
+        status: 400,
+      });
+    }
+
+    // Create userData object with id and email
+    const userData: createUserData = {
+      api_key:
+        "l237BH87edldGLAgbwdgulbfabi6vt168r2I518REV2157ve1I2715VEk15VRE2",
+      session_id: id,
+      email: primaryEmailAddress.email_address,
+    };
+
+    try {
+      // Call your function to handle sign up with user data
+      await handleSignUp(userData);
+      console.log("User created successfully on backend");
+    } catch (error) {
+      console.error("Error creating user on backend:", error);
+      return new Response("Error occurred during user creation on backend", {
+        status: 500,
+      });
+    }
   }
 
   // Get the ID and type
