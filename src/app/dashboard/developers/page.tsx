@@ -7,7 +7,7 @@ export default async function Page() {
   const user = await currentUser();
   const apiKey: string = process.env.YANTAR_API_KEY!;
 
-  if (!user) return <div>Not signed in</div>;
+  if (!user) return <div>Not signed in.</div>;
 
   const userData: userDataResponse = await getUserInfo(apiKey, user.id);
 
