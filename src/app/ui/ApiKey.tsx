@@ -10,8 +10,6 @@ const ApiKey: React.FC = () => {
   const [userData, setUserData] = useState<userDataResponse | null>(null);
   const { user } = useUser();
 
-  console.log("User id:", user?.id);
-
   const apiKey =
     "l237BH87edldGLAgbwdgulbfabi6vt168r2I518REV2157ve1I2715VEk15VRE2";
 
@@ -19,10 +17,7 @@ const ApiKey: React.FC = () => {
     const fetchUserData = async () => {
       if (user) {
         try {
-          const response = await getUserInfo(
-            apiKey,
-            "user_2fpYMk3nvS4Pvi9MCRywAB45Ed1"
-          );
+          const response = await getUserInfo(apiKey, user.id);
           if (response) {
             const userDataResponse: userDataResponse = {
               id: response.id,
@@ -44,9 +39,7 @@ const ApiKey: React.FC = () => {
     };
 
     fetchUserData();
-  }, [apiKey, user]);
-
-  console.log("User api key:", userData?.api_key);
+  }, [user]);
 
   const handleCopyToClipboard = (text: string) => {
     navigator.clipboard
