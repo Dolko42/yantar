@@ -1,45 +1,12 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { getUserInfo } from "@/lib/utils";
-import { useUser } from "@clerk/nextjs";
-import type { userDataResponse } from "../../../types";
+import React, { useState } from "react";
 
-const ApiKey: React.FC = () => {
+type ApiKeyProps = {
+  apiKey: string;
+};
+
+const ApiKey: React.FC<ApiKeyProps> = ({ apiKey }) => {
   const [copySuccess, setCopySuccess] = useState(false);
-  const [userData, setUserData] = useState<userDataResponse | null>(null);
-  const { user } = useUser();
-
-  const apiKey =
-    "l237BH87edldGLAgbwdgulbfabi6vt168r2I518REV2157ve1I2715VEk15VRE2";
-
-  useEffect(() => {
-    const fetchUserData = async () => {
-      if (user) {
-        try {
-          const response = await getUserInfo(apiKey, user.id);
-          if (response) {
-            const userDataResponse: userDataResponse = {
-              id: response.id,
-              created_at: response.created_at,
-              email: response.email,
-              credits: response.credits,
-              api_key: response.api_key,
-              username: response.username,
-              auth_id: response.auth_id,
-            };
-            setUserData(userDataResponse);
-          }
-          setUserData(response);
-        } catch (error) {
-          console.error("Error fetching user:", error);
-          // Optionally handle error state here
-        }
-      }
-    };
-
-    fetchUserData();
-  }, [user]);
 
   const handleCopyToClipboard = (text: string) => {
     navigator.clipboard
@@ -55,20 +22,21 @@ const ApiKey: React.FC = () => {
 
   return (
     <>
-      {userData ? (
+      {apiKey ? (
         <span
-          onClick={() => handleCopyToClipboard(userData.api_key)}
+          onClick={() => handleCopyToClipboard(apiKey)}
           className="font-semibold"
         >
-          {userData.api_key}
+          {apiKey}
           {copySuccess && (
             <span className="text-green-600 ml-2 text-sm">Copied!</span>
           )}
         </span>
       ) : (
-        <p>Loading user data...</p>
+        <p>Generating API key...</p>
       )}
     </>
   );
 };
+
 export default ApiKey;

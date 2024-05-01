@@ -65,10 +65,11 @@ export async function POST(req: Request) {
       });
     }
 
+    const apiKey: string = process.env.YANTAR_API_KEY!;
+
     // Create userData object with id and email
     const userData: createUserData = {
-      api_key:
-        "l237BH87edldGLAgbwdgulbfabi6vt168r2I518REV2157ve1I2715VEk15VRE2",
+      api_key: apiKey,
       auth_id: id,
       email: primaryEmailAddress.email_address,
     };
