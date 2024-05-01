@@ -46,6 +46,8 @@ const ApiKey: React.FC = () => {
     fetchUserData();
   }, [apiKey, user]);
 
+  console.log("User api key:", userData?.api_key);
+
   const handleCopyToClipboard = (text: string) => {
     navigator.clipboard
       .writeText(text)
