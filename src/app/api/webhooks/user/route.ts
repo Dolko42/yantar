@@ -69,7 +69,7 @@ export async function POST(req: Request) {
     const userData: createUserData = {
       api_key:
         "l237BH87edldGLAgbwdgulbfabi6vt168r2I518REV2157ve1I2715VEk15VRE2",
-      session_id: id,
+      auth_id: id,
       email: primaryEmailAddress.email_address,
     };
 

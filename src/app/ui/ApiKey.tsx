@@ -1,12 +1,50 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { getUserInfo } from "@/lib/utils";
+import { useUser } from "@clerk/nextjs";
+import type { userDataResponse } from "../../../types";
 
-type ApiKeyProps = {
-  apiKey: string;
-};
-
-const ApiKey: React.FC<ApiKeyProps> = ({ apiKey }) => {
+const ApiKey: React.FC = () => {
   const [copySuccess, setCopySuccess] = useState(false);
+  const [userData, setUserData] = useState<userDataResponse | null>(null);
+  const { user } = useUser();
+
+  console.log("User id:", user?.id);
+
+  const apiKey =
+    "l237BH87edldGLAgbwdgulbfabi6vt168r2I518REV2157ve1I2715VEk15VRE2";
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      if (user) {
+        try {
+          const response = await getUserInfo(
+            apiKey,
+            "user_2fpYMk3nvS4Pvi9MCRywAB45Ed1"
+          );
+          if (response) {
+            const userDataResponse: userDataResponse = {
+              id: response.id,
+              created_at: response.created_at,
+              email: response.email,
+              credits: response.credits,
+              api_key: response.api_key,
+              username: response.username,
+              auth_id: response.auth_id,
+            };
+            setUserData(userDataResponse);
+          }
+          setUserData(response);
+        } catch (error) {
+          console.error("Error fetching user:", error);
+          // Optionally handle error state here
+        }
+      }
+    };
+
+    fetchUserData();
+  }, [apiKey, user]);
 
   const handleCopyToClipboard = (text: string) => {
     navigator.clipboard
@@ -22,14 +60,18 @@ const ApiKey: React.FC<ApiKeyProps> = ({ apiKey }) => {
 
   return (
     <>
-      <span
-        onClick={() => handleCopyToClipboard(apiKey)}
-        className="font-semibold"
-      >
-        {apiKey}
-      </span>
-      {copySuccess && (
-        <span className="text-green-600 ml-2 text-sm">Copied!</span>
+      {userData ? (
+        <span
+          onClick={() => handleCopyToClipboard(userData.api_key)}
+          className="font-semibold"
+        >
+          {userData.api_key}
+          {copySuccess && (
+            <span className="text-green-600 ml-2 text-sm">Copied!</span>
+          )}
+        </span>
+      ) : (
+        <p>Loading user data...</p>
       )}
     </>
   );
