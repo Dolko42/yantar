@@ -56,6 +56,7 @@ export const createAd = async (
   description: string,
   one_liner: string,
   link: string,
+  CTA: string,
   user_id: number
 ) => {
   const apiEndpoint = `https://backend.yantar.yazero.io/frontend/insert-ad`;
@@ -66,6 +67,7 @@ export const createAd = async (
     description: description,
     one_liner: one_liner,
     link: link,
+    CTA: CTA,
     user_id: user_id,
     credits_left: 0,
   };

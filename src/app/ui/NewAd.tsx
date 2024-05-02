@@ -84,6 +84,7 @@ const NewAd: React.FC<NewAdProps> = ({ userId, apiKey, authId }) => {
         descriptionValue,
         headlineValue,
         linkValue,
+        ctaValue,
         userId
       );
 
