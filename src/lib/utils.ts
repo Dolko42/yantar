@@ -118,6 +118,39 @@ export const getUserAds = async (
   }
 };
 
+// TODO: donate credits to ad
+export const donateAdCredits = async (
+  api_key: string,
+  auth_id: string,
+  credits: number,
+  ad_id: number
+) => {
+  const apiEndpoint = `https://backend.yantar.yazero.io/frontend/donate-credits-to-ad`;
+
+  const payload = {
+    api_key: api_key,
+    auth_id: auth_id,
+    credits: credits,
+    ad_id: ad_id,
+  };
+
+  try {
+    const response = await axios.post(apiEndpoint, payload, {
+      headers: {
+        Authorization: `Bearer ${api_key}`,
+      },
+    });
+
+    const responseData = response.data;
+    console.log("Credits added successfully:", response.data);
+    return responseData;
+  } catch (error) {
+    console.error("Error adding ads:", error);
+    // Handle API request error
+    throw new Error("Failed to donate credits");
+  }
+};
+
 export const formatDate = (dateString: string) => {
   const date = new Date(dateString); // Parse the date string
 
@@ -144,5 +177,3 @@ export const formatDate = (dateString: string) => {
 
   return formattedDate;
 };
-
-// TODO: get user credits - probably with tanstack to be able to revalidate when the increase/decrease

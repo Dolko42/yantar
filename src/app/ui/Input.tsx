@@ -3,7 +3,7 @@ import React, { ChangeEvent } from "react";
 type InputProps = {
   placeholder?: string;
   height?: string;
-  value?: string;
+  value?: string | number;
   name: string;
   onChange?: (event: ChangeEvent<HTMLTextAreaElement>) => void;
 };

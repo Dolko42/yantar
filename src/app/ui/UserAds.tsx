@@ -1,12 +1,29 @@
 import Link from "next/link";
-import { SingleAdType } from "../../../types";
+import { SingleAdType, userDataResponse } from "../../../types";
 import SingleAd from "./SingleAd";
+import { currentUser } from "@clerk/nextjs/server";
+import { getUserInfo } from "@/lib/utils";
 
 type UserAdsProps = {
   ads: SingleAdType[];
 };
 
 export default async function UserAds({ ads }: UserAdsProps) {
+  const user = await currentUser();
+  const apiKey: string = process.env.YANTAR_API_KEY!;
+
+  if (!user) {
+    return (
+      <div className="text-skin-base">
+        Please <Link href="/sign-up">Sign up</Link> to view the Dashboard.
+      </div>
+    );
+  }
+
+  const userData: userDataResponse = await getUserInfo(apiKey, user.id);
+  const userCredits = userData.credits;
+  const authId = user.id;
+
   return (
     <div className="flex flex-col items-center bg-white p-4 border-skin-base border rounded-lg row-span-4">
       <div className="flex w-full justify-start">
@@ -23,7 +40,12 @@ export default async function UserAds({ ads }: UserAdsProps) {
       {ads.length > 0 ? (
         <div className="bg-white py-4 w-full rounded-lg max-h-96 overflow-y-auto custom-scrollbar">
           {ads.map((ad) => (
-            <SingleAd key={ad.id} ad={ad} />
+            <SingleAd
+              key={ad.id}
+              ad={ad}
+              userCredits={userCredits}
+              authId={authId}
+            />
           ))}
         </div>
       ) : (
