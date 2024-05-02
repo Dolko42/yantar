@@ -2,8 +2,9 @@ import Link from "next/link";
 import { FilterDropdown } from "../ui/FilterDropdown";
 import DeveloperBanner from "../ui/DeveloperBanner";
 import { currentUser } from "@clerk/nextjs/server";
-import { userDataResponse } from "../../../types";
-import { getUserInfo } from "@/lib/utils";
+import { SingleAdType, adDataResponse, userDataResponse } from "../../../types";
+import { getUserAds, getUserInfo } from "@/lib/utils";
+import UserAds from "../ui/UserAds";
 
 export default async function Page() {
   const user = await currentUser();
@@ -18,6 +19,18 @@ export default async function Page() {
   }
 
   const userData: userDataResponse = await getUserInfo(apiKey, user.id);
+  const adData: adDataResponse = await getUserAds(apiKey, user.id);
+  const ads = adData.data;
+
+  const calculateTotalClicks = (ads: SingleAdType[]) => {
+    let totalClicks = 0;
+
+    ads.forEach((ad) => {
+      totalClicks += ad.clicks_amount;
+    });
+
+    return totalClicks;
+  };
 
   return (
     <div className="p-4 mt-2 lg:mt-8">
@@ -44,32 +57,10 @@ export default async function Page() {
             <h3 className="text-2xl text-skin-base">Traffic</h3>
           </div>
           <span className="flex items-center text-skin-base text-9xl font-bold h-full pb-8">
-            0
+            {calculateTotalClicks(ads)}
           </span>
         </div>
-        <div className="flex flex-col items-center bg-white p-4 border-skin-base border rounded-lg row-span-4">
-          <div className="flex w-full justify-start">
-            <h3 className="text-2xl text-skin-base">Your ads</h3>
-          </div>
-          <div className="flex items-center pb-8 h-full">
-            <Link href="/dashboard/create-ad">
-              <button className="rounded-full leading-none bg-skin-subtle text-skin-base text-4xl font-medium p-6">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0 6.68908H6.68907V0H9.31092V6.68908H16V9.31092H9.31092V16H6.68907V9.31092H0V6.68908Z"
-                    fill="#000AFF"
-                  />
-                </svg>
-              </button>
-            </Link>
-          </div>
-        </div>
+        <UserAds ads={ads} />
         <div className="flex flex-col items-center bg-white py-6 border-skin-base border rounded-lg row-span-1">
           <span className="text-skin-base text-4xl font-bold">0$</span>
           <span className="text-sm text-skin-muted">Spent</span>
