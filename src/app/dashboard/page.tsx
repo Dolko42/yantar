@@ -5,8 +5,10 @@ import { currentUser } from "@clerk/nextjs/server";
 import { SingleAdType, adDataResponse, userDataResponse } from "../../../types";
 import { getUserAds, getUserInfo } from "@/lib/utils";
 import UserAds from "../ui/UserAds";
+import { unstable_noStore as noStore } from "next/cache";
 
 export default async function Page() {
+  noStore();
   const user = await currentUser();
   const apiKey: string = process.env.YANTAR_API_KEY!;
 
@@ -74,3 +76,5 @@ export default async function Page() {
     </div>
   );
 }
+
+export const revalidate = 1;

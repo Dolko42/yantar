@@ -118,6 +118,7 @@ const NewAd: React.FC<NewAdProps> = ({ userId, apiKey, authId }) => {
             </p>
             <Input
               height="3rem"
+              name="headline"
               placeholder="Enter headline"
               value={headlineValue}
               onChange={handleHeadlineChange}
@@ -134,6 +135,7 @@ const NewAd: React.FC<NewAdProps> = ({ userId, apiKey, authId }) => {
             </p>
             <Input
               height="5rem"
+              name="description"
               placeholder="Enter description"
               value={descriptionValue}
               onChange={handleDescriptionChange}
@@ -149,6 +151,7 @@ const NewAd: React.FC<NewAdProps> = ({ userId, apiKey, authId }) => {
             </p>
             <Input
               height="3rem"
+              name="link"
               placeholder="Enter link"
               value={linkValue}
               onChange={handleLinkChange}
