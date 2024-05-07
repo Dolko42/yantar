@@ -46,8 +46,16 @@ const NewAd: React.FC<NewAdProps> = ({ userId, apiKey, authId }) => {
     const inputValue = event.target.value;
     setLinkValue(inputValue);
 
+    const hasHttpProtocol = /^http:\/\//i.test(inputValue);
+    const hasHttpsProtocol = /^https:\/\//i.test(inputValue);
+
+    const normalizedUrl =
+      hasHttpProtocol || hasHttpsProtocol
+        ? inputValue
+        : `https://${inputValue}`;
+
     const urlRegex = /^(https?:\/\/)?([\w.]+)\.([a-z]{2,})(\/[\w .-]*)*\/?$/i;
-    const isValid = urlRegex.test(inputValue);
+    const isValid = urlRegex.test(normalizedUrl);
 
     setIsValidLink(isValid);
   };
