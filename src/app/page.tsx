@@ -35,7 +35,7 @@ export default function Home() {
               <Image
                 alt="yantar advertising data dashboard mockup"
                 src={heroImage}
-                className="non-selectable max-h-[35rem] w-auto 4xl:max-w-[1105px]"
+                className="non-selectable max-h-[35rem] w-auto 4xl:max-w-[1100px]"
                 style={{
                   border: "3px solid #000AFF",
                   borderRadius: "8px",
@@ -188,7 +188,7 @@ export default function Home() {
         </section>
 
         <section className="my-10">
-          <h2 className="text-skin-base leading-[1.275] text-4xl lg:text-6xl 2xl:text-8xl 4xl:text-9xl">
+          {/* <h2 className="text-skin-base leading-[1.275] text-4xl lg:text-6xl 2xl:text-8xl 4xl:text-9xl">
             By leveraging semantic analysis and{" "}
             <span className="text-skin-secondary">contextual ad placement</span>
             , Yantar aims to create a{" "}
@@ -196,9 +196,9 @@ export default function Home() {
             intrusive{" "}
             <span className="text-skin-secondary">advertising experience</span>{" "}
             across AI platforms.
-          </h2>
+          </h2> */}
           <a href="https://tally.so/r/3yl5v8">
-            <button className="w-full bg-skin-base text-white rounded-md py-6 lg:py-10 text-xl lg:text-4xl mt-12 hover:bg-skin-secondary transition-colors">{`Join waitlist ->`}</button>
+            <button className="w-full bg-skin-base text-white rounded-md py-6 lg:py-10 text-xl lg:text-4xl hover:bg-skin-secondary transition-colors">{`Join waitlist ->`}</button>
           </a>
         </section>
       </main>
