@@ -194,19 +194,19 @@ export default async function Page() {
           The JSON object will have the following structure:
         </p>
         <CodeBlock code={jsonCode} language="javascript" copy={true} />
-        <p className="text-skin-muted mt-3">
+        <p className="text-skin-muted mt-6">
           3.2 [Tailwind + React] Render returned ads:
         </p>
         <CodeBlock code={adCode} language="javascript" copy={true} />
       </div>
-      <p className="text-skin-muted mt-3">
+      <p className="text-skin-muted mt-6">
         {`3.3 [Tailwind + React] Add "Sponsored" badge:`}
       </p>
       <CodeBlock code={badgeCode} language="javascript" copy={true} />
 
       <div className="mt-20">
         <h3 className="text-skin-base text-2xl mt-6 font-semibold">
-          Example of rendered ads:
+          Examples of rendered ads:
         </h3>
         {adData.data.map((ad) => (
           <div key={ad.id} className="bg-white shadow-md rounded-lg p-6 my-4">
