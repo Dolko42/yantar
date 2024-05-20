@@ -12,7 +12,7 @@ export default async function Page() {
   const userData: userDataResponse = await getUserInfo(apiKey, user.id);
 
   return (
-    <div className="p-4 mt-2 lg:mt-8">
+    <div className="p-6 mt-2 lg:mt-4 min-h-screen">
       <h1 className="text-skin-base text-5xl">Developers</h1>
       <h3 className="text-skin-base text-2xl mt-6">1. Copy your API key</h3>
       <div className="md:grid md:grid-cols-4 text-skin-base border-b pb-1 border-skin-base mt-6 hidden">

@@ -6,6 +6,7 @@ type ButtonProps = {
   bg?: string;
   color?: string;
   width?: string;
+  hover?: string;
   onClick?: () => void;
 };
 
@@ -14,6 +15,7 @@ const Button: React.FC<ButtonProps> = ({
   bg = "bg-skin-base",
   color = "text-white",
   width,
+  hover,
   onClick,
 }) => {
   const handleClick = () => {
@@ -25,7 +27,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       onClick={handleClick}
-      className={`${bg} ${color} ${width} w-full text-md md:w-auto py-4 px-20 font-medium rounded-md 3xl:text-lg hover:bg-skin-secondary transition-colors`}
+      className={`${bg} ${color} ${width} w-full text-md md:w-auto py-4 px-20 font-medium rounded-md 3xl:text-lg ${hover} transition-colors`}
     >
       {text}
     </button>

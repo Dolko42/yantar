@@ -27,7 +27,7 @@ export default function Home() {
               seamlessly with various AI platforms.
             </p>
             <a href="https://tally.so/r/3yl5v8">
-              <Button text="Join waitlist ->" />
+              <Button text="Join waitlist ->" hover="hover:bg-skin-secondary" />
             </a>
           </div>
           <div className="w-full lg:w-1/2">

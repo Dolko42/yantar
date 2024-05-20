@@ -1,7 +1,7 @@
 import React from "react";
 import { SingleAdType } from "../../../types";
 import { formatDate } from "@/lib/utils";
-import EditAdDialog from "./EditAdDialog";
+// import EditAdDialog from "./EditAdDialog";
 
 type SingleAdProps = {
   ad: SingleAdType;
@@ -26,12 +26,12 @@ export default async function SingleAd({
           <div className="p-3 bg-gray-100 h-min min-w-40 border border-gray-200 rounded-lg">
             <h3 className="max-w-[25ch]">{ad.one_liner}</h3>
           </div>
-          <EditAdDialog
+          {/* <EditAdDialog
             ad={ad}
             apiKey={apiKey}
             authId={authId}
             userCredits={userCredits}
-          />
+          /> */}
         </div>
         <div className="flex w-1/3 justify-between">
           <p>{ad.clicks_amount}</p>

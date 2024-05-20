@@ -1,3 +1,4 @@
+import Announcer from "../ui/Announcer";
 import DashboardNavbar from "../ui/DashboardNavbar";
 
 export default function DashboardLayout({
@@ -7,6 +8,7 @@ export default function DashboardLayout({
 }) {
   return (
     <section>
+      <Announcer />
       <DashboardNavbar />
       {children}
     </section>
