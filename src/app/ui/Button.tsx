@@ -25,7 +25,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       onClick={handleClick}
-      className={`${bg} ${color} ${width} w-full text-md md:w-auto py-4 px-20 font-medium rounded-md 3xl:text-lg`}
+      className={`${bg} ${color} ${width} w-full text-md md:w-auto py-4 px-20 font-medium rounded-md 3xl:text-lg hover:bg-skin-secondary transition-colors`}
     >
       {text}
     </button>

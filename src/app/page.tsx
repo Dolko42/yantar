@@ -167,7 +167,20 @@ export default function Home() {
           </div>
         </section>
 
-        <section></section>
+        <section className="my-10">
+          <h2 className="text-skin-base leading-[1.275] text-4xl lg:text-6xl 2xl:text-8xl 4xl:text-9xl">
+            By leveraging semantic analysis and{" "}
+            <span className="text-skin-secondary">contextual ad placement</span>
+            , Yantar aims to create a{" "}
+            <span className="text-skin-secondary">more effective</span> and less
+            intrusive{" "}
+            <span className="text-skin-secondary">advertising experience</span>{" "}
+            across AI platforms.
+          </h2>
+          <a href="https://tally.so/r/3yl5v8">
+            <button className="w-full bg-skin-base text-white rounded-md py-6 lg:py-10 text-xl lg:text-4xl mt-12 hover:bg-skin-secondary transition-colors">{`Join waitlist ->`}</button>
+          </a>
+        </section>
       </main>
     </>
   );

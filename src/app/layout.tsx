@@ -5,6 +5,7 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "@/components/ui/toaster";
 import Script from "next/script";
+import Footer from "./ui/Footer";
 
 export const metadata: Metadata = {
   title: "Yantar",
@@ -25,6 +26,7 @@ export default function RootLayout({
         <body>
           {children}
           <Toaster />
+          <Footer />
         </body>
         <Script
           defer
