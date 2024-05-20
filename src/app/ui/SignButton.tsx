@@ -11,7 +11,7 @@ import Link from "next/link";
 
 const SignButton: React.FC = () => {
   return (
-    <div className="w-full flex gap-2 md:justify-end md:w-1/2">
+    <div className="w-full flex gap-2 md:justify-end grow">
       <SignedIn>
         <Link
           href="/dashboard"

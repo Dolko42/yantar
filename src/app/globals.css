@@ -15,6 +15,7 @@
     --color-fill-light: #f9fafb;
 
     --color-border: #d0d1fb;
+    --color-border-muted: #a5b4fc;
     --color-border-strong: #6366f1;
 
     --color-blue: #4f46e5;
@@ -22,6 +23,10 @@
     --color-blue-to: #201c50;
 
     --color-warning: #f59e0b;
+
+    --color-secondary: #ff006b;
+    --color-secondary-muted: #ffeef8;
+    --color-secondary-border: #ff7db4;
   }
 }
 

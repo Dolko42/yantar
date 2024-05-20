@@ -8,6 +8,20 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      animation: {
+        marquee: "marquee 25s linear infinite",
+        marquee2: "marquee2 25s linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+        marquee2: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(0%)" },
+        },
+      },
       fontFamily: {
         sans: ["var(--font-geist-sans)"],
         mono: ["var(--font-geist-mono)"],
@@ -15,6 +29,7 @@ const config: Config = {
       textColor: {
         skin: {
           base: "var(--color-base)",
+          secondary: "var(--color-secondary)",
           muted: "var(--color-text-muted)",
           invisible: "var(--color-text-invisible)",
           dark: "var(--color-text-dark)",
@@ -25,6 +40,8 @@ const config: Config = {
       backgroundColor: {
         skin: {
           base: "var(--color-base)",
+          secondary: "var(--color-secondary)",
+          secondarymuted: "var(--color-secondary-muted)",
           muted: "var(--color-fill-muted)",
           subtle: "var(--color-fill-subtle)",
           light: "var(--color-fill-light)",
@@ -34,7 +51,9 @@ const config: Config = {
       borderColor: {
         skin: {
           base: "var(--color-border)",
-          strong: "var(--color-border-strong)",
+          muted: "var(--color-border-muted)",
+          secondary: "var(--color-secondary-border)",
+          strong: "var(--color-base)",
         },
       },
       blue: {
