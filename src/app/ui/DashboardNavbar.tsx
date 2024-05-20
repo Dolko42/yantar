@@ -12,15 +12,13 @@ export default async function DashboardNavbar() {
   if (!user) {
     return (
       <div className="p-6">
-        <div>
-          <div className="flex items-center justify-center gap-3 rounded bg-skin-subtle pb-3 pt-[10px] font-medium">
-            <Image
-              alt="yantar logo"
-              src="/yantar-logo.svg"
-              width={60}
-              height={20}
-            />
-          </div>
+        <div className="flex items-center justify-center gap-3 rounded bg-skin-subtle pb-2 pt-[10px] font-medium">
+          <Image
+            alt="yantar logo"
+            src="/yantar-logo.svg"
+            width={60}
+            height={20}
+          />
         </div>
         <div className="flex flex-col md:flex-row gap-0 md:gap-2 pt-3 justify-between">
           <div className="grid grid-cols-2 gap-2 md:flex w-full pb-3">
