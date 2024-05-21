@@ -7,13 +7,12 @@ import {
   SignedIn,
   SignedOut,
 } from "@clerk/nextjs";
-import Link from "next/link";
 
 const SignButton: React.FC = () => {
   return (
-    <div className="w-full flex gap-2 md:justify-end grow">
+    <>
       <SignedIn>
-        <Link
+        {/* <Link
           href="/dashboard"
           className={`group cursor-pointer flex h-8 w-1/2 md:w-1/4 items-center justify-center gap-[6px] rounded px-4 bg-skin-subtle transition`}
         >
@@ -30,8 +29,8 @@ const SignButton: React.FC = () => {
           >
             Dashboard
           </span>
-        </Link>
-        <SignOutButton>
+        </Link> */}
+        <SignOutButton redirectUrl="/">
           <div
             className={`group cursor-pointer flex h-8 w-1/2 md:w-1/4 items-center justify-center gap-[6px] rounded px-2 bg-skin-subtle transition`}
           >
@@ -73,7 +72,7 @@ const SignButton: React.FC = () => {
           </div>
         </SignUpButton>
       </SignedOut>
-    </div>
+    </>
   );
 };
 export default SignButton;
