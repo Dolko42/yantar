@@ -12,11 +12,11 @@ const Footer: React.FC = () => {
   return (
     <div className="px-6 text-skin-base mt-10">
       <div className="border-t pt-3 pb-10 border-skin-base">
-        <div className="flex items-center justify-between w-full bg-skin-subtle p-4 rounded-md">
-          <div className="flex gap-6">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between w-full bg-skin-subtle p-4 rounded-md">
+          <div className="flex flex-col lg:flex-row gap-6">
             <Link
               href="/"
-              className={`${
+              className={`text-sm ${
                 isActive("/") ? "text-skin-base" : "text-skin-muted"
               }`}
             >
@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
             </Link>
             <Link
               href="/dashboard"
-              className={`${
+              className={`text-sm ${
                 isActive("/dashboard") ? "text-skin-base" : "text-skin-muted"
               }`}
             >
@@ -32,14 +32,14 @@ const Footer: React.FC = () => {
             </Link>
             <a
               href="https://tally.so/r/3yl5v8"
-              className={`${
+              className={`text-sm ${
                 isActive("/desired-path") ? "text-skin-base" : "text-skin-muted"
               }`}
             >
               Join waitlist
             </a>
           </div>
-          <div className="flex gap-1 text-sm">
+          <div className="flex gap-1 text-sm mt-8 lg:mt-0">
             by
             <a href="https://www.yazero.io/" target="_blank">
               <p className="underline font-semibold"> yazero.io 💚</p>

@@ -12,7 +12,7 @@ export default async function Page() {
   const userData: userDataResponse = await getUserInfo(apiKey, user.id);
 
   return (
-    <div className="p-6 mt-2 lg:mt-4 min-h-screen">
+    <div className="p-4 lg:p-6 mt-2 lg:mt-4 min-h-screen">
       <h1 className="text-skin-base text-5xl">New ad</h1>
       <NewAd apiKey={apiKey} authId={userData.auth_id} userId={userData.id} />
     </div>

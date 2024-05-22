@@ -35,7 +35,7 @@ const NavLink: React.FC<NavLinkProps> = ({ text, url, iconPath }) => {
           </svg>
         </span>
         <span
-          className={`text-xs ${
+          className={`text-xs text-nowrap ${
             isActive
               ? "text-white"
               : "text-skin-muted group-hover:text-skin-base"
@@ -61,7 +61,7 @@ const NavLink: React.FC<NavLinkProps> = ({ text, url, iconPath }) => {
         </svg>
       </span>
       <span
-        className={`text-xs text-skin-muted group-hover:text-skin-base transition`}
+        className={`text-xs text-nowrap text-skin-muted group-hover:text-skin-base transition`}
       >
         {text}
       </span>

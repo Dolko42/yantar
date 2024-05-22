@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <Announcer />
       <Navbar />
-      <main className="p-6">
+      <main className="p-4 lg:p-6">
         <section className="flex flex-col items-center lg:max-h-[40rem] pb-10 border-b border-skin-base md:flex-row justify-between gap-12 md:mt-10">
           <div className="w-full lg:w-1/2">
             <h1 className="text-skin-base max-w-[20ch] text-3xl lg:text-5xl xl:text-6xl 2xl:text-7xl 3xl:text-8xl 4xl:text-9xl mb-6">

@@ -32,7 +32,7 @@ const SignButton: React.FC = () => {
         </Link> */}
         <SignOutButton redirectUrl="/">
           <div
-            className={`group cursor-pointer flex h-8 w-1/2 md:w-1/4 items-center justify-center gap-[6px] rounded px-2 bg-skin-subtle transition`}
+            className={`group cursor-pointer flex h-8 w-full lg:w-1/2 md:w-1/4 items-center justify-center gap-[6px] rounded px-2 bg-skin-subtle transition`}
           >
             <span>
               <svg className="h-[18px] w-[18px]">
@@ -54,7 +54,7 @@ const SignButton: React.FC = () => {
       <SignedOut>
         <SignUpButton forceRedirectUrl="/onboarding">
           <div
-            className={`group cursor-pointer flex h-8 w-full md:w-1/4 items-center justify-center gap-[6px] rounded px-4 bg-skin-subtle transition`}
+            className={`group cursor-pointer flex h-8 w-full lg:w-1/2 md:w-1/4 items-center justify-center gap-[6px] rounded px-4 bg-skin-subtle transition`}
           >
             <span>
               <svg className="h-[18px] w-[18px]">

@@ -35,7 +35,7 @@ export default async function Page() {
   };
 
   return (
-    <div className="p-6 mt-2 lg:mt-4 min-h-screen">
+    <div className="p-4 lg:p-6 mt-2 lg:mt-4 min-h-screen">
       <h1 className="text-skin-base text-5xl">Dashboard</h1>
       <div className="flex justify-between items-end mt-6">
         <h2 className="text-skin-base">Analytics</h2>

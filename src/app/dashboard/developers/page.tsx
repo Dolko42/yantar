@@ -102,7 +102,7 @@ export default async function Page() {
   };
 
   return (
-    <div className="p-6 mt-2 lg:mt-4 min-h-screen">
+    <div className="p-4 lg:p-6 mt-2 lg:mt-4 min-h-screen">
       <h1 className="text-skin-base text-5xl">Developers</h1>
       <p className="text-skin-muted max-w-[35ch] mt-2">
         This short guide will show you how to get relavant ads based on the

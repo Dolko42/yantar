@@ -6,7 +6,7 @@ import SignButton from "./SignButton";
 
 const Navbar: React.FC = () => {
   return (
-    <div className="p-6">
+    <div className="p-4 lg:p-6">
       <div className="flex items-center justify-center gap-3 rounded bg-skin-subtle pb-2 pt-[10px] font-medium">
         <Image
           alt="yantar logo"

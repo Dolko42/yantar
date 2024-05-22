@@ -58,7 +58,7 @@ export default async function DashboardNavbar() {
   const userData: userDataResponse = await getUserInfo(apiKey, user.id);
 
   return (
-    <div className="p-6">
+    <div className="p-4 lg:p-6">
       <div>
         <div className="flex items-center justify-center gap-3 rounded bg-skin-subtle pb-3 pt-[10px] font-medium">
           <Image
