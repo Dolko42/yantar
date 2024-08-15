@@ -33,6 +33,11 @@ export default function RootLayout({
           src="https://analytics.umami.yazero.io/script.js"
           data-website-id="89a939ae-29a4-47fb-8458-44632dd9b749"
         />
+        <Script
+          defer
+          src="https://umami-s044kkk.yza.yazero.io/script.js"
+          data-website-id="c54262f7-2cd8-46e8-b7a4-034b3255c82c"
+        />
       </html>
     </ClerkProvider>
   );
